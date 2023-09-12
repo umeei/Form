@@ -8,7 +8,7 @@ app.use(express.json());
 const studentapi= require('./Route/Student');
 app.use("/student/api",studentapi)
 
-mongoose.connect("mongodb+srv://umairjutt2025:umairjutt2025@umair-cluster.oducycs.mongodb.net/?retryWrites=true&w=majority").then((res)=>{
+mongoose.connect("mongodb://127.0.0.1:27017").then((res)=>{
     console.log("DataBase is connected");
 }).catch((e)=>{
     console.log(e.message)
