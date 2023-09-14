@@ -1,9 +1,12 @@
 const mongoose = require ('mongoose');
 const studentmodel = mongoose.model("student", new mongoose.Schema({
-    "name":String,
-    "Course":String,
-    "Gender":Number,
-    "Age":Number
+    "Fullname":String,
+    "Email":String,
+    "PhoneNumber":Number,
+    "Birthdate":String,
+    "Address":String,
+    "Gender":String,
+
 }))
 
 module.exports = studentmodel

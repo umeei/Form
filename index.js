@@ -1,14 +1,21 @@
 const express = require("express");
 const app = express();
-const port= process.env.PORT || 5000;
+const port= 3000;
 const mongoose = require('mongoose');
 app.use(express.json());
 
 
+app.set('view engine', 'ejs');
+app.use(express.static('public'));
+
+app.get('/form', function(req,res) {
+    res.render('Form')
+})
+
 const studentapi= require('./Route/Student');
 app.use("/student/api",studentapi)
 
-mongoose.connect("mongodb://127.0.0.1:27017").then((res)=>{
+mongoose.connect("mongodb+srv://umairjutt2025:umairjutt2025@umair-cluster.oducycs.mongodb.net/StudentForm?retryWrites=true&w=majority/").then((res)=>{
     console.log("DataBase is connected");
 }).catch((e)=>{
     console.log(e.message)
