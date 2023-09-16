@@ -15,7 +15,7 @@ app.get('/', function(req,res) {
 const studentapi= require('./Route/Student');
 app.use("/student/api",studentapi)
 
-mongoose.connect("mongodb+srv://umairjutt2025:umairjutt2025@umair-cluster.oducycs.mongodb.net/Studentss?retryWrites=true&w=majority").then((res)=>{
+mongoose.connect("mongodb+srv://umairjutt2025:umairjutt2025@umair-cluster.oducycs.mongodb.net/StudentForm?retryWrites=true&w=majority").then((res)=>{
     console.log("DataBase is connected");
 }).catch((e)=>{
     console.log(e.message)
