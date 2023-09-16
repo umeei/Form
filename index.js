@@ -9,13 +9,13 @@ app.set('view engine', 'ejs');
 app.use(express.static('public'));
 
 app.get('/', function(req,res) {
-    res.render(__dirname+'/views/Form.ejs')
+    res.render(__dirname+'/Views/Form.ejs')
 })
 
 const studentapi= require('./Route/Student');
 app.use("/student/api",studentapi)
 
-mongoose.connect("mongodb://127.0.0.1:27017/StudentForm").then((res)=>{
+mongoose.connect("mongodb+srv://umairjutt2025:umairjutt2025@umair-cluster.oducycs.mongodb.net/Studentss?retryWrites=true&w=majority").then((res)=>{
     console.log("DataBase is connected");
 }).catch((e)=>{
     console.log(e.message)
